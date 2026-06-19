@@ -24,10 +24,11 @@ async def update_tag_estado(
     estado: TagEstado,
     comentario: str | None,
     jwt_token: str,
+    por_ia: bool = False,
 ) -> dict:
     url = f"{settings.MYPLANS_API_URL}/api/v1/tags/{id_tag}/estado"
     headers = {"Authorization": f"Bearer {jwt_token}", "Content-Type": "application/json"}
-    payload: dict = {"estadoNuevo": estado.value}
+    payload: dict = {"estadoNuevo": estado.value, "porIa": por_ia}
     if comentario:
         payload["comentario"] = comentario
     async with httpx.AsyncClient(timeout=TIMEOUT) as client:

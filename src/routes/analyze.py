@@ -123,6 +123,7 @@ async def aplicar_cambios(
                 estado=sug.estadoSugerido,
                 comentario=sug.comentario,
                 jwt_token=jwt_token,
+                por_ia=True,
             )
             aplicados += 1
             detalle.append({"idTag": sug.idTag, "codigo": sug.codigo, "ok": True})
