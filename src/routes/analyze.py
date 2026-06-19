@@ -20,6 +20,7 @@ def _require_token(authorization: str = Header(...)) -> str:
     return authorization[7:].strip()
 
 
+
 @router.post(
     "/planos/{id_plano}/analizar",
     response_model=AnalisisResponse,
