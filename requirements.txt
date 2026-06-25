@@ -7,3 +7,7 @@ pydantic>=2.10.0
 pydantic-settings>=2.6.0
 httpx>=0.28.0
 python-multipart>=0.0.18
+
+# Testing
+pytest>=9.0.0
+pytest-asyncio>=0.21.0
